@@ -1,0 +1,61 @@
+<section id="projects" class="section" aria-labelledby="projects-title">
+  <div class="inner">
+    <div #col class="col">
+      <div class="header" [style.top.px]="headerTop()" [style.margin-bottom.px]="headerMb()">
+        <h2 id="projects-title" class="pf-section-title">Featured Projects</h2>
+        <p class="pf-section-sub">Some of my favourite and most recent works</p>
+      </div>
+
+      @for (p of cards(); track p.slug) {
+        <article
+          class="folder"
+          [class.folder--blue]="p.tint === 'blue'"
+          [class.folder--mobile]="mobile()"
+          [style.top.px]="p.stickyTop"
+          [style.margin-top.px]="p.marginTop"
+          [style.margin-bottom.px]="p.marginBottom"
+        >
+          <div class="tab-row">
+            <div class="tab">
+              <span class="num" aria-hidden="true">{{ p.num }}</span>
+              <h3 class="title">{{ p.title }}</h3>
+            </div>
+            <svg class="slant" [attr.width]="mobile() ? 40 : 64" viewBox="0 0 64 44" preserveAspectRatio="none" aria-hidden="true">
+              <path class="slant-fill" d="M0 0.5 C10 0.5 14 3 19 9 L37 35 C42 41.5 46 43.5 56 43.5 L64 43.5 L64 45 L0 45 Z" />
+              <path class="slant-stroke" [attr.d]="slantStroke()" fill="none" stroke-width="1" vector-effect="non-scaling-stroke" />
+            </svg>
+            @if (!mobile()) {
+              <div class="tab-spacer"></div>
+            }
+          </div>
+
+          <div class="body">
+            <div class="grid">
+              <div class="cover">
+                @if (p.cover) {
+                  <img [src]="p.cover" [alt]="p.title + ' cover'" loading="lazy" />
+                } @else {
+                  <div class="cover-placeholder">Project cover</div>
+                }
+              </div>
+              <div class="info">
+                <ul class="tags">
+                  @for (t of p.tags; track t) {
+                    <li class="pf-chip">{{ t }}</li>
+                  }
+                </ul>
+                <p class="desc">{{ p.summary }}</p>
+                <div>
+                  <a appButton [routerLink]="['/work', p.slug]">
+                    View project <app-icon name="arrow-right" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      }
+      <div class="tail" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>

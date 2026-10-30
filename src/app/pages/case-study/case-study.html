@@ -1,0 +1,50 @@
+@let p = project();
+<article class="page">
+  <a routerLink="/" fragment="projects" class="back"><app-icon name="arrow-left" [size]="16" /> All projects</a>
+
+  <header class="hero">
+    <ul class="tags">
+      @for (t of p.tags; track t) {
+        <li class="pf-chip">{{ t }}</li>
+      }
+    </ul>
+    <h1 class="title">{{ p.title }}</h1>
+    <p class="summary">{{ p.summary }}</p>
+  </header>
+
+  <div class="cover">
+    @if (p.cover) {
+      <img [src]="p.cover" [alt]="p.title + ' cover'" />
+    } @else {
+      <div class="cover-placeholder">Project cover</div>
+    }
+  </div>
+
+  <dl class="meta">
+    @for (m of p.meta; track m.label) {
+      <div class="meta-item">
+        <dt>{{ m.label }}</dt>
+        <dd>{{ m.value }}</dd>
+      </div>
+    }
+  </dl>
+
+  <div class="sections">
+    @for (s of p.sections; track s.heading) {
+      <section class="block">
+        <h2>{{ s.heading }}</h2>
+        <div class="block-body">
+          @for (para of s.body; track $index) {
+            <p>{{ para }}</p>
+          }
+        </div>
+      </section>
+    }
+  </div>
+
+  <nav class="next" aria-label="Next project">
+    <span class="next-lbl">Next project</span>
+    <a class="next-title" [routerLink]="['/work', next().slug]">{{ next().title }}</a>
+    <a appButton variant="secondary" [routerLink]="['/work', next().slug]">View <app-icon name="arrow-right" /></a>
+  </nav>
+</article>

@@ -1,0 +1,96 @@
+<section class="section" aria-labelledby="timeline-title">
+  <div class="inner">
+    <div class="head">
+      <h2 id="timeline-title" class="pf-section-title">Timeline</h2>
+      <p class="pf-section-sub">Of my fridge magnet collection and other projects</p>
+    </div>
+
+    <div class="board">
+      <div class="years-row">
+        <button type="button" class="nav-btn" aria-label="Previous year" (click)="prev()" [disabled]="year() === 0">
+          <app-icon name="chevron-left" [size]="22" />
+        </button>
+        <div class="years-scroll">
+          <div class="years" role="tablist" aria-label="Year">
+            @for (y of years; track y; let i = $index) {
+              <button
+                type="button"
+                role="tab"
+                class="year"
+                [class.year--active]="i === year()"
+                [attr.aria-selected]="i === year()"
+                (click)="year.set(i)"
+              >
+                {{ y }}
+              </button>
+            }
+          </div>
+        </div>
+        <button type="button" class="nav-btn" aria-label="Next year" (click)="next()" [disabled]="year() === years.length - 1">
+          <app-icon name="chevron-right" [size]="22" />
+        </button>
+      </div>
+
+      <div role="tabpanel" [attr.aria-label]="years[year()]">
+        @if (year() === 0) {
+          <div class="y2017">
+            <div class="col">
+              <div class="edu">
+                <div class="school">
+                  <span class="small muted">School</span>
+                  <img src="/images/campion-crest.webp" alt="Campion School crest" width="48" class="crest" />
+                  <span class="small strong">Campion School, Bhopal</span>
+                  <span class="small muted">2004 -17</span>
+                </div>
+                <svg class="string" viewBox="0 0 170 60" aria-hidden="true">
+                  <path d="M6 18 C40 60 110 60 164 6" fill="none" stroke="#8E1B22" stroke-width="1.2" />
+                  <circle cx="6" cy="18" r="7" fill="#E0323C" /><circle cx="4" cy="16" r="2.5" fill="#FF9A9A" opacity=".8" />
+                  <circle cx="164" cy="6" r="7" fill="#E0323C" /><circle cx="162" cy="4" r="2.5" fill="#FF9A9A" opacity=".8" />
+                </svg>
+                <div class="college">
+                  <div class="note">
+                    <div class="note-big">AIR 8,237</div>
+                    <div class="note-small">In IIT JEE Adv. (Gen)</div>
+                  </div>
+                  <img src="/images/iitr-logo.webp" alt="IIT Roorkee logo" width="56" class="iitr mult" />
+                  <span class="small strong">IIT Roorkee</span>
+                  <span class="small muted">Bachelors of Architecture</span>
+                </div>
+              </div>
+
+              <div class="sketch">
+                <div class="sketch-title">I used to sketch back then 🖊</div>
+                <img src="/images/sketches-2017.webp" alt="Pencil and ink sketches" class="mult sketch-img" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="col col--right">
+              <div class="tools">
+                <span class="tools-lbl">Fav tools of that year ❤️</span>
+                <img src="/images/tools-2017.webp" alt="After Effects, Photoshop, Procreate, CSS, HTML, Python" class="mult tools-img" loading="lazy" />
+              </div>
+              <div class="magnets">
+                <img src="/images/magnet-dehradun.webp" alt="Dehradun magnet" class="mult magnet m1" loading="lazy" />
+                <img src="/images/magnet-nainital.webp" alt="Nainital magnet" class="mult magnet m2" loading="lazy" />
+                <img src="/images/magnet-yamunotri.webp" alt="Yamunotri Temple magnet" class="mult magnet m3" loading="lazy" />
+              </div>
+              <div class="pin-card">
+                <span class="pin" aria-hidden="true"></span>
+                <div class="pin-inner">
+                  <img src="/images/kharsali-drawing.webp" alt="Kharsali village drawing" loading="lazy" />
+                  <div class="pin-title">Kharsali: ANDC trophy</div>
+                  <div class="pin-text">National level competition for village documentation and design. Published on 2019-20</div>
+                  <a class="pin-link" routerLink="/work/kharsali">View project ›</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        } @else {
+          <div class="empty">
+            <span>~ {{ years[year()] }} magnets go here ~</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

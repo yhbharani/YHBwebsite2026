@@ -1,0 +1,112 @@
+/* ============================================================
+   Design-system tokens (from the Claude Design "Anisha" system).
+   Light values on :root, dark overrides on [data-theme="dark"].
+   ============================================================ */
+:root {
+  /* ---------- Base palette ---------- */
+  --primary-standard: #240030;
+  --primary-subtle: #91689e;
+  --gray-standard: #151415;
+  --gray-subtle: #4a494a;
+  --gray-faint: #8a878a;
+  --product-standard: #246dff;
+  --product-subtle: #e5eeff;
+
+  /* ---------- Interactive ---------- */
+  --int-primary-standard: #240030;
+  --int-primary-subtle: #633373;
+
+  /* ---------- Semantic ---------- */
+  --text-heading: var(--gray-standard);
+  --text-body: var(--gray-subtle);
+  --text-muted: var(--gray-faint);
+  --accent: var(--int-primary-standard);
+  --accent-hover: var(--int-primary-subtle);
+  --accent-soft: #e8ddee;
+  --accent-ink: #ffffff;
+  --line: rgba(21, 20, 21, 0.12);
+  --line-strong: rgba(21, 20, 21, 0.24);
+  --focus-ring: rgba(145, 104, 158, 0.5);
+
+  /* ---------- Typography ---------- */
+  --font-sans: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-head: 'Rajdhani', 'Hanken Grotesk', sans-serif;
+  --font-body: 'Mulish', ui-sans-serif, system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* ---------- Radius / shadow / motion ---------- */
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(36, 0, 48, 0.06), 0 1px 3px rgba(36, 0, 48, 0.05);
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 140ms;
+  --dur: 240ms;
+  --dur-slow: 520ms;
+
+  /* ---------- Portfolio page theme (light) ---------- */
+  --pf-bg: #ffffff;
+  --pf-ink: #151415;
+  --pf-muted: #5e5b5f;
+  --pf-muted-2: #77737a;
+  --pf-body: #3d3a3e;
+  --pf-card: #ffffff;
+  --pf-shell: #ededef;
+  --pf-panel: #ededef;
+  --pf-chip: #f5f5f6;
+  --pf-line: #e7e6e8;
+  --pf-dot: #d9d7db;
+  --pf-fold: #dcdadd;
+  --pf-accent: #240030;
+  --pf-track: #9dbcff;
+  --pf-knob: 3px;
+  --pf-light-label: #151415;
+  --pf-dark-label: #b9b6bb;
+  --pf-social: #4a494a;
+  --pf-light-disp: block;
+  --pf-dark-disp: none;
+
+  /* featured project #1 tint */
+  --pf-blue-panel: #e4eafb;
+  --pf-blue-fold: #cdd7f3;
+  --pf-blue-chip: #f3f6fe;
+
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --accent: #e8ddee;
+  --accent-hover: #d8c6e2;
+  --accent-ink: #240030;
+  --int-primary-standard: #e8ddee;
+  --int-primary-subtle: #d8c6e2;
+  --text-heading: #e6e4e7;
+  --text-body: #a3a0a4;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.24);
+
+  --pf-bg: #121014;
+  --pf-ink: #f3eef5;
+  --pf-muted: #a9a3ad;
+  --pf-muted-2: #a9a3ad;
+  --pf-body: #d6d0da;
+  --pf-card: #1e1a22;
+  --pf-shell: #2a2530;
+  --pf-panel: #24202a;
+  --pf-chip: #2a2530;
+  --pf-line: #3a3440;
+  --pf-dot: #3a3440;
+  --pf-fold: #3a3440;
+  --pf-accent: #d8c6e2;
+  --pf-track: #91689e;
+  --pf-knob: 23px;
+  --pf-light-label: #77727b;
+  --pf-dark-label: #f3eef5;
+  --pf-social: #cfc8d4;
+  --pf-light-disp: none;
+  --pf-dark-disp: block;
+
+  --pf-blue-panel: #1e2236;
+  --pf-blue-fold: #323a5c;
+  --pf-blue-chip: #2a3050;
+
+  color-scheme: dark;
+}

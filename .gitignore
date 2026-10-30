@@ -1,0 +1,6 @@
+/dist
+/node_modules
+/.angular
+.firebase/
+*.log
+.DS_Store
