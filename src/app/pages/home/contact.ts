@@ -13,8 +13,10 @@ import { Icon } from '../../shared/icon';
 
       <div class="intro">
         <img [src]="profile.avatar" alt="" width="76" height="76" class="avatar" loading="lazy" />
-        <p class="headline">{{ profile.contactHeadline }}</p>
-        <p class="sub">{{ profile.contactSub }}</p>
+        <div class="intro-text">
+          <p class="headline">{{ profile.contactHeadline }}</p>
+          <p class="sub">{{ profile.contactSub }}</p>
+        </div>
       </div>
 
       <div class="panel">
@@ -35,8 +37,8 @@ import { Icon } from '../../shared/icon';
           @for (l of links; track l.label) {
             <a class="link" [href]="l.href" target="_blank" rel="noopener noreferrer">
               <span class="link-text">
+                <app-icon class="link-icon" [name]="l.icon" [size]="20" />
                 <span class="link-label">{{ l.label }}</span>
-                <span class="link-sub">{{ l.sub }}</span>
               </span>
               <app-icon name="arrow-up-right" />
             </a>
@@ -52,11 +54,15 @@ import { Icon } from '../../shared/icon';
       padding: 0 20px clamp(72px, 9vw, 120px); display: flex; flex-direction: column; align-items: center;
       gap: clamp(40px, 5vw, 64px); scroll-margin-top: 24px;
     }
-    .intro { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
-    .avatar { width: 76px; height: 76px; border-radius: 50%; object-fit: cover; }
+    .intro {
+      width: 100%; max-width: 880px; display: flex; flex-wrap: wrap; align-items: center;
+      gap: 20px clamp(20px, 3vw, 32px); padding: 0 clamp(20px, 3vw, 32px);
+    }
+    .avatar { width: 76px; height: 76px; border-radius: 50%; object-fit: cover; flex: none; }
+    .intro-text { display: flex; flex-direction: column; gap: 4px; flex: 1 1 280px; min-width: 0; }
     .headline {
-      max-width: 560px; font-family: var(--font-head); font-weight: 600; font-size: clamp(24px, 3.2vw, 32px);
-      line-height: 1.3; color: var(--pf-ink); text-wrap: balance;
+      font-family: var(--font-head); font-weight: 600; font-size: clamp(24px, 3.2vw, 32px);
+      line-height: 1.2; color: var(--pf-ink); text-wrap: pretty;
     }
     .sub { font-size: clamp(15px, 1.6vw, 17px); color: var(--pf-muted); }
 
@@ -90,14 +96,17 @@ import { Icon } from '../../shared/icon';
       transition: transform var(--dur) var(--ease-out);
     }
     .link:hover { color: var(--pf-ink); transform: translateY(-2px); }
-    .link-text { display: flex; flex-direction: column; gap: 4px; }
+    .link-text { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .link-icon { color: var(--pf-muted-2); }
     .link-label { font-family: var(--font-head); font-weight: 700; font-size: 18px; line-height: 1; }
-    .link-sub { font-size: 12px; color: var(--pf-muted-2); }
   `,
 })
 export class Contact {
   protected readonly profile = PROFILE;
-  protected readonly links = [...SOCIALS, { label: 'Resume', sub: 'PDF', href: PROFILE.resumeUrl }];
+  protected readonly links = [
+    ...SOCIALS.map((s) => ({ label: s.label, href: s.href, icon: s.id as string })),
+    { label: 'Resume', href: PROFILE.resumeUrl, icon: 'file-text' },
+  ];
   protected readonly copied = signal(false);
   private timer?: ReturnType<typeof setTimeout>;
 

@@ -40,6 +40,16 @@
   --fold: var(--pf-blue-fold);
   --chip: var(--pf-blue-chip);
 }
+.folder--teal {
+  --panel: var(--pf-teal-panel);
+  --fold: var(--pf-teal-fold);
+  --chip: var(--pf-teal-chip);
+}
+.folder--lilac {
+  --panel: var(--pf-lilac-panel);
+  --fold: var(--pf-lilac-fold);
+  --chip: var(--pf-lilac-chip);
+}
 
 .tab-row {
   position: relative;

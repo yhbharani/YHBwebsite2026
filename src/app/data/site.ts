@@ -7,10 +7,15 @@ export const PROFILE = {
   role: 'Sr. Product Designer',
   location: 'Bengaluru, India',
   avatar: 'images/yash-avatar.webp',
-  email: 'hello@yashbharani.com',
-  tagline: 'I turn complex chores 🥦 into effortless journeys🍫 ... And create systems 🤖 that move metrics 📈',
+  email: 'yash.h.bharani@gmail.com',
+  // The tail is kept on one line (no wrap) in the hero.
+  taglineLead: 'I turn complex chores 🥦 into effortless journeys 🍫 and build',
+  taglineTail: 'systems 🤖 that move metrics 🚀',
+  get tagline() {
+    return `${this.taglineLead} ${this.taglineTail}`;
+  },
   contactHeadline: "Have a chore that should feel effortless? Let's talk.",
-  contactSub: 'Roles, projects, or a quick hello. I usually reply within a day.',
+  contactSub: 'Roles, projects, or a quick hello. My inbox is always open.',
   // TODO: the Dropbox link from the design is a temporary download URL and will expire.
   // Put resume.pdf in /public and change this to 'resume.pdf'.
   resumeUrl: 'resume.pdf',
@@ -67,8 +72,8 @@ export interface Project {
   cover: string | null;
   /** Featured projects appear in the home page stack, in this order. */
   featured: boolean;
-  /** Use the blue tint on the home page card (project 01 in the design). */
-  tint?: 'blue';
+  /** Folder colour on the home page stack. */
+  tint?: 'blue' | 'teal' | 'lilac';
   meta: { label: string; value: string }[];
   sections: CaseSection[];
 }
@@ -82,7 +87,7 @@ const PLACEHOLDER_SECTIONS: CaseSection[] = [
 
 // TODO: the design uses the Motor Insurance tags + description for all three cards.
 // Give projects 02 and 03 their own copy.
-const MOTOR_TAGS = ['Navi Super-App', '0 to 1 Product Desing', 'UX Research', 'Funnel optimisations', '7 months'];
+const MOTOR_TAGS = ['Navi Super-App', '0 to 1 Product Design', 'UX Research', 'Funnel optimisations', '7 months'];
 const MOTOR_DESC =
   'Designed and scaled a 0-to-1 Motor Insurance experience inside Navi, compressing 15min. buying chore to a 3min growing sales from 0-300/day in a 3-week sprint.';
 
@@ -105,6 +110,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'health-insurance-funnel',
+    tint: 'teal',
     title: 'Health Insurance Funnel',
     summary: MOTOR_DESC,
     tags: MOTOR_TAGS,
@@ -119,6 +125,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'de-shaw',
+    tint: 'lilac',
     title: 'DE Shaws',
     summary: MOTOR_DESC,
     tags: MOTOR_TAGS,

@@ -3,6 +3,7 @@
 }
 .section {
   padding: 0 20px clamp(80px, 10vw, 140px);
+  scroll-margin-top: 24px;
 }
 .inner {
   max-width: 1080px;

@@ -68,6 +68,12 @@
   --pf-blue-panel: #e4eafb;
   --pf-blue-fold: #cdd7f3;
   --pf-blue-chip: #f3f6fe;
+  --pf-teal-panel: #e6f2f7;
+  --pf-teal-fold: #cde3ee;
+  --pf-teal-chip: #f4fafc;
+  --pf-lilac-panel: #efebf6;
+  --pf-lilac-fold: #dcd3ea;
+  --pf-lilac-chip: #f8f6fc;
 
   color-scheme: light;
 }
@@ -107,6 +113,12 @@
   --pf-blue-panel: #1e2236;
   --pf-blue-fold: #323a5c;
   --pf-blue-chip: #2a3050;
+  --pf-teal-panel: #1a262c;
+  --pf-teal-fold: #2c3e48;
+  --pf-teal-chip: #22323a;
+  --pf-lilac-panel: #241e2c;
+  --pf-lilac-fold: #3a3148;
+  --pf-lilac-chip: #2e2738;
 
   color-scheme: dark;
 }

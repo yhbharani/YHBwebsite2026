@@ -12,7 +12,7 @@ import { ThemeToggle } from '../../shared/theme-toggle';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterLink, Button, Icon, SocialIcons, ThemeToggle],
   template: `
-    <section class="hero" aria-label="Introduction">
+    <section id="top" class="hero" aria-label="Introduction">
       <div class="lanyard" aria-hidden="true">
         <div class="strap"></div>
         <div class="clip"></div>
@@ -29,7 +29,6 @@ import { ThemeToggle } from '../../shared/theme-toggle';
               <div class="who-text">
                 <h1 class="name">{{ profile.name }}</h1>
                 <div class="role">{{ profile.role }}</div>
-                <app-social-icons />
               </div>
             </div>
 
@@ -49,8 +48,8 @@ import { ThemeToggle } from '../../shared/theme-toggle';
           </div>
 
           <div class="intro">
-            <p class="tagline">{{ profile.tagline }}</p>
-            <div class="loc"><app-icon name="map-pin" /> {{ profile.location }}</div>
+            <p class="tagline">{{ profile.taglineLead }} <span class="nowrap">{{ profile.taglineTail }}</span></p>
+            <app-social-icons class="socials" />
           </div>
 
           <div class="marquee" aria-label="Skills">
@@ -62,16 +61,24 @@ import { ThemeToggle } from '../../shared/theme-toggle';
           </div>
 
           <div class="actions">
-            <a class="work" routerLink="/" fragment="projects">
-              <span>My work</span>
-              <app-icon name="chevrons-down" [size]="16" />
-            </a>
-            <div class="right">
-              <app-theme-toggle />
+            <div class="resume">
               <a appButton size="lg" [full]="true" [href]="profile.resumeUrl" target="_blank" rel="noopener noreferrer">
-                Resume <app-icon name="file-user" />
+                Resume <app-icon name="external-link" />
               </a>
             </div>
+            <app-theme-toggle />
+          </div>
+
+          <!-- ticket-style tear line + "See my work" -->
+          <div class="stub">
+            <div class="perf" aria-hidden="true">
+              <span class="notch notch--l"></span>
+              <span class="notch notch--r"></span>
+            </div>
+            <a class="see-work" routerLink="/" fragment="projects">
+              See my work
+              <app-icon name="chevrons-down" [size]="16" />
+            </a>
           </div>
         </div>
       </div>
