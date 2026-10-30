@@ -23,7 +23,7 @@ export class SeoService {
   set(page: PageSeo): void {
     const fullTitle = page.title ? `${page.title} · ${PROFILE.name}` : `${PROFILE.name} · ${PROFILE.role}`;
     const url = SITE_URL + page.path;
-    const image = SITE_URL + (page.image ?? PROFILE.avatar);
+    const image = `${SITE_URL}/${(page.image ?? PROFILE.avatar).replace(/^\//, '')}`;
 
     this.title.setTitle(fullTitle);
     this.meta.updateTag({ name: 'description', content: page.description });

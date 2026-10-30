@@ -1,49 +1,5 @@
 @import './styles/tokens.css';
 
-/* ---------- Self-hosted fonts (latin subsets) ---------- */
-@font-face {
-  font-family: 'Hanken Grotesk';
-  font-style: normal;
-  font-weight: 300 600;
-  font-display: swap;
-  src: url('/fonts/hanken-grotesk-latin.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Rajdhani';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('/fonts/rajdhani-500-latin.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Rajdhani';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('/fonts/rajdhani-600-latin.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Rajdhani';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/rajdhani-700-latin.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Mulish';
-  font-style: normal;
-  font-weight: 300 700;
-  font-display: swap;
-  src: url('/fonts/mulish-latin.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'IBM Plex Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/ibm-plex-mono-400-latin.woff2') format('woff2');
-}
-
 /* ---------- Base ---------- */
 *,
 *::before,

@@ -6,14 +6,14 @@ export const PROFILE = {
   name: 'Yash Bharani',
   role: 'Sr. Product Designer',
   location: 'Bengaluru, India',
-  avatar: '/images/yash-avatar.webp',
+  avatar: 'images/yash-avatar.webp',
   email: 'hello@yashbharani.com',
   tagline: 'I turn complex chores 🥦 into effortless journeys🍫 ... And create systems 🤖 that move metrics 📈',
   contactHeadline: "Have a chore that should feel effortless? Let's talk.",
   contactSub: 'Roles, projects, or a quick hello. I usually reply within a day.',
   // TODO: the Dropbox link from the design is a temporary download URL and will expire.
-  // Put resume.pdf in /public and change this to '/resume.pdf'.
-  resumeUrl: '/resume.pdf',
+  // Put resume.pdf in /public and change this to 'resume.pdf'.
+  resumeUrl: 'resume.pdf',
   skills: [
     'Product Design',
     'UX Research',
@@ -43,12 +43,12 @@ export const SOCIALS: SocialLink[] = [
 /** Logos that drop into the hero card, in order (light + dark variants). */
 export const HERO_LOGOS = {
   label: 'IIT Roorkee, Petpooja, IDC IIT Bombay, D E Shaw & Co, Navi',
-  seal: '/images/logo-iitr-seal.webp',
+  seal: 'images/logo-iitr-seal.webp',
   tiles: [
-    { light: '/images/logo-petpooja-light.webp', dark: '/images/logo-petpooja-dark.webp', left: 11.5, top: 21.8, width: 75.5, delay: 650 },
-    { light: '/images/logo-idc-light.webp', dark: '/images/logo-idc-dark.webp', left: 3.25, top: 11.8, width: 94.25, delay: 1100 },
-    { light: '/images/logo-deshaw-light.webp', dark: '/images/logo-deshaw-dark.webp', left: 0.75, top: 8, width: 98.75, delay: 1550 },
-    { light: '/images/logo-navi-light.webp', dark: '/images/logo-navi-dark.webp', left: 6.5, top: 1, width: 88, delay: 2000 },
+    { light: 'images/logo-petpooja-light.webp', dark: 'images/logo-petpooja-dark.webp', left: 11.5, top: 21.8, width: 75.5, delay: 650 },
+    { light: 'images/logo-idc-light.webp', dark: 'images/logo-idc-dark.webp', left: 3.25, top: 11.8, width: 94.25, delay: 1100 },
+    { light: 'images/logo-deshaw-light.webp', dark: 'images/logo-deshaw-dark.webp', left: 0.75, top: 8, width: 98.75, delay: 1550 },
+    { light: 'images/logo-navi-light.webp', dark: 'images/logo-navi-dark.webp', left: 6.5, top: 1, width: 88, delay: 2000 },
   ],
 };
 
@@ -92,7 +92,7 @@ export const PROJECTS: Project[] = [
     title: 'Building Motor Insurance',
     summary: MOTOR_DESC,
     tags: MOTOR_TAGS,
-    cover: null, // e.g. '/images/cover-motor.webp' (not included in the design export)
+    cover: null, // e.g. 'images/cover-motor.webp' (not included in the design export)
     featured: true,
     tint: 'blue',
     meta: [
@@ -136,7 +136,7 @@ export const PROJECTS: Project[] = [
     title: 'Kharsali: ANDC trophy',
     summary: 'National level competition for village documentation and design. Published on 2019-20.',
     tags: ['Architecture', 'Village documentation', 'IIT Roorkee'],
-    cover: '/images/kharsali-drawing.webp',
+    cover: 'images/kharsali-drawing.webp',
     featured: false,
     meta: [
       { label: 'Recognition', value: 'ANDC trophy' },

@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "ng build && firebase deploy --only hosting",
-    "postbuild": "node scripts/postbuild.mjs"
+    "postbuild": "node scripts/postbuild.mjs",
+    "build:gh": "ng build --base-href /YHBWebsite2026/ && node scripts/postbuild.mjs"
   },
   "private": true,
   "packageManager": "npm@10.9.9",

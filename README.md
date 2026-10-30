@@ -31,6 +31,16 @@ npm start            # http://localhost:4200 (live reload)
 - [ ] Case-study and About copy (search for `TODO`).
 - [ ] Set `SITE_URL` in `src/app/core/seo.service.ts` to your domain.
 
+## Preview on GitHub Pages
+
+Every push to `main` builds the site and publishes it to **https://yhbharani.github.io/YHBWebsite2026/** (see `.github/workflows/deploy-pages.yml`).
+
+One-time setup: on GitHub, go to repo **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
+
+To build the Pages version locally: `npm run build:gh` (output is in `dist/portfolio/browser`).
+
+> Paths in the code are written without a leading slash (`images/...`, not `/images/...`) so the same build works both at the domain root (Firebase) and under `/YHBWebsite2026/` (GitHub Pages). Keep new image paths in that format.
+
 ## Deploy to Firebase
 
 ```bash
